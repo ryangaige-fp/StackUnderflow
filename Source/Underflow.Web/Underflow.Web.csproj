@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Underflow.data\Underflow.data.csproj" />
+    <ProjectReference Include="..\Underflow.Business\Underflow.Business.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Controllers\Questions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\User\Contact.cshtml" />
+  </ItemGroup>
+</Project>
