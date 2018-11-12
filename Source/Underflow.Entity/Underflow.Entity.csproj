@@ -20,6 +20,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Questions.cs" />
+    <Compile Include="Answer.cs" />
+    <Compile Include="Comments.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

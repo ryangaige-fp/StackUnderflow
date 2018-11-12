@@ -35,9 +35,9 @@ namespace Underflow.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDBContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationDbContext>(options =>
+              options.UseSqlServer(
+                  Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDbContext<UnderflowContext>(options =>
                 options.UseSqlServer(
@@ -50,7 +50,7 @@ namespace Underflow.Web
                .AddRoleManager<RoleManager<IdentityRole>>()
                .AddDefaultUI()
                .AddDefaultTokenProviders()
-               .AddEntityFrameworkStores<ApplicationDBContext>();
+               .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
 
@@ -80,6 +80,31 @@ namespace Underflow.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-        }
+
+            //private async Task CreateUserRolesAsync(IServiceProvider services)
+            //{
+                ////create the role admin
+                //var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
+                //var rolesManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+
+
+                //var roleExists = await rolesManager.RoleExistsAsync("admin");
+                //if (!roleExists)
+                //{
+                //    await rolesManager.CreateAsync(new IdentityRole("admin"));
+                //}
+
+                //// lets give admin to a single user
+                //var user = await userManager.FindByEmailAsync("j@j.com");
+                //await userManager.AddToRoleAsync(user, "admin");
+
+
+
+
+
+
+
+
+            }
     }
 }

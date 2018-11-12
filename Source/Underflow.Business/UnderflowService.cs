@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Underflow.data;
+using Underflow.Entity;
 
 namespace Underflow.Business
 {
@@ -14,8 +15,14 @@ namespace Underflow.Business
             _context = context;
         }
 
+        public Questions CreateQuestion(Questions question)
+        {
+            _context.Questions.Add(question);
+            _context.SaveChanges();
+            return question;
+        }
 
-
+        
 
 
 

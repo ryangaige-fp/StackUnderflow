@@ -9,16 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Underflow.data\Underflow.data.csproj" />
-    <ProjectReference Include="..\Underflow.Business\Underflow.Business.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Controllers\Questions.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="Views\User\Contact.cshtml" />
+    <ProjectReference Include="..\Underflow.Business\Underflow.Business.csproj" />
   </ItemGroup>
 </Project>

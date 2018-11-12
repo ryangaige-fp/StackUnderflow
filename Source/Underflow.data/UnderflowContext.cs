@@ -7,9 +7,12 @@ namespace Underflow.data
     public class UnderflowContext : DbContext
     {
         public DbSet<Questions> Questions { get; set; }
+        public DbSet<Answer> Answers { get; set; }
+        public DbSet<Comments> Comments { get; set; }
 
 
-        public DataContext(DbContextOptions<DataContext> options) : base(options)
+
+        public UnderflowContext(DbContextOptions<UnderflowContext> options) : base(options)
         {
 
 
