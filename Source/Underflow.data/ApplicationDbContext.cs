@@ -14,7 +14,7 @@ namespace Underflow.data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         { }
 
-        //public DbSet<>  { get; set; }
+       
     }
 }
 
