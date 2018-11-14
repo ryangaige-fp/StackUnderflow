@@ -7,16 +7,18 @@ using Microsoft.EntityFrameworkCore;
 namespace Underflow.data
 {
 
-        public class ApplicationDbContext : IdentityDbContext
+        public class ApplicationDbContext : DbContext
         {
 
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
-        {
-        }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        { }
 
-
-    }
+        //public DbSet<>  { get; set; }
     }
 }
+
+
+
+ 
+    

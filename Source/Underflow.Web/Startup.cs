@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Underflow.Business;
 using Underflow.data;
+using Okta.AspNetCore;
 
 namespace Underflow.Web
 {
@@ -27,7 +28,27 @@ namespace Underflow.Web
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
+
         {
+
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = OktaDefaults.ApiAuthenticationScheme;
+                options.DefaultChallengeScheme = OktaDefaults.ApiAuthenticationScheme;
+                options.DefaultSignInScheme = OktaDefaults.ApiAuthenticationScheme;
+            }).AddOktaWebApi(new OktaWebApiOptions()
+{
+    OktaDomain = "https://dev-893797.oktapreview.com",
+    ClientId = "{clientId}"
+});
+
+
+
+
+
+
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -73,6 +94,9 @@ namespace Underflow.Web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
